@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+                         .:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-             -:::::::::::.            .:::::::::::-                                                             
+                        /mNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNd-             .hNNNNNNNNNNm/          /mNNNNNNNNNNd.                                                             
+                       sNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNh`               `sNNNNNNNNNNNs        oNNNNNNNNNNNy`                                                              
+                     `hNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNo                   +NNNNNNNNNNNh.    `hNNNNNNNNNNNo                                                                
+                    -mNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNm/                     -mNNNNNNNNNNm-  -dNNNNNNNNNNm:                                                                 
+                   /NNNNNNNNNNNdoooooooooooodNNNNNNNNNNNdoooooooooooohNNNNNNNNNNNd-           .           .hNNNNNNNNNNN+/mNNNNNNNNNNd.                                                                  
+                  sNNNNNNNNNNNy`           oNNNNNNNNNNNy`           +NNNNNNNNNNNh`           /my`           sNNNNNNNNNNNNNNNNNNNNNNy`                                                                   
+                `hNNNNNNNNNNN+           `yNNNNNNNNNNNo           `yNNNNNNNNNNNo            oNNNd.           +NNNNNNNNNNNNNNNNNNNNo                                                                     
+               -mNNNNNNNNNNm:           .dNNNNNNNNNNm:           .dNNNNNNNNNNm/           `hNNNNNm:           -mNNNNNNNNNNNNNNNNm:                                                                      
+              /NNNNNNNNNNNd.           /mNNNNNNNNNNd.           :mNNNNNNNNNNd-           -mNNNNNNNNo           `hNNNNNNNNNNNNNNd.                                                                       
+             sNNNNNNNNNNNy`           oNNNNNNNNNNNy`           oNNNNNNNNNNNh`           -yhhhhhhhhhh+            sNNNNNNNNNNNNy`                                                                        
+           .hNNNNNNNNNNN+           `hNNNNNNNNNNNo           `yNNNNNNNNNNNo                                     `hNNNNNNNNNNNNd.                                                                        
+          -mNNNNNNNNNNm:           -dNNNNNNNNNNm:           .dNNNNNNNNNNm/                                     -mNNNNNNNNNNNNNNm:                                                                       
+         +NNNNNNNNNNNh.           /mNNNNNNNNNNd.           :mNNNNNNNNNNd-                                     +NNNNNNNNNNNNNNNNNNo                                                    `yyyy+            
+       `sNNNNNNNNNNNs`           sNNNNNNNNNNNy`           oNNNNNNNNNNNh`                                     sNNNNNNNNNNNNNNNNNNNNy`                                                   --dNs            
+      .hNNNNNNNNNNN+           `hNNNNNNNNNNNo           `yNNNNNNNNNNNo                                     .hNNNNNNNNNNNNNNNNNNNNNNd.                   ``     `         ```         ``  dNs      ``    
+     :mNNNNNNNNNNm:           -mNNNNNNNNNNm:           .dNNNNNNNNNNm/           `hmmmmmmmmmmmmm:          :mNNNNNNNNNNm--mNNNNNNNNNNm/           omNNsyhmNd+:hdmNh:   :hmdhmmy.   /dNmddsdNs   :ymddmd+`
+    +NNNNNNNNNNNh.           /NNNNNNNNNNNd.           /mNNNNNNNNNNd-           -mNNNNNNNNNNNNNNNo        +NNNNNNNNNNNh.  `hNNNNNNNNNNNo            NNh`  +NNs   oNN`  /y:   hNh  +NN/   /NNs  /Nm-  `hNy
+  `yNNNNNNNNNNNs`           sNNNNNNNNNNNy`           oNNNNNNNNNNNh`           /NNNNNNNNNNNNNNNNNNy`    `yNNNNNNNNNNNs      sNNNNNNNNNNNh`          NN+   -NN-   :NN`  -oyyssdNh  dNh     dNs  hNmyyyyhhy
+ .dNNNNNNNNNNN+           `hNNNNNNNNNNNo           `yNNNNNNNNNNNo            sNNNNNNNNNNNNNNNNNNNNd.  .dNNNNNNNNNNN+        /mNNNNNNNNNNd-         NN+   -NN-   :NN` -NN/  `dNh  yNm-   /NNs  sNm.   -s+
+:mNNNNNNNNNNm-           -mNNNNNNNNNNm:           -dNNNNNNNNNNm/           `hNNNNNNNNNNNNNNNNNNNNNNm::mNNNNNNNNNNm-          -dNNNNNNNNNNm/      +dNNmd: yNNdy  dNNho`hNmyysoNms``smNdhdodNmd. +dNdhdNh- 
+
+www.MAXmade.nl
+-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=600, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Max Seelig - MAXmade">
+    <title>ACTIVE checker</title>
+    <script src="https://use.typekit.net/fwp7gap.js"></script>
+    <link href="css/getactive.css" rel="stylesheet">
+	<script>try{Typekit.load({async:true});}catch(e){}</script>
+</head>
+<body>
+<a href="https://github.com/m-a-x-s-e-e-l-i-g/active-checker" class="github-corner"> <svg width="50" height="50" viewBox="0 0 250 250" style="fill:#333d45; color:#FFF; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm {-webkit-animation: octocat-wave 560ms ease-in-out; animation: octocat-wave 560ms ease-in-out } @-webkit-keyframes octocat-wave {0%,100% {-webkit-transform: rotate(0); transform: rotate(0) } 20%,60% {-webkit-transform: rotate(-25deg); transform: rotate(-25deg) } 40%,80% {-webkit-transform: rotate(10deg); transform: rotate(10deg) } } @keyframes octocat-wave {0%,100% {-webkit-transform: rotate(0); transform: rotate(0) } 20%,60% {-webkit-transform: rotate(-25deg); transform: rotate(-25deg) } 40%,80% {-webkit-transform: rotate(10deg); transform: rotate(10deg) } }</style>     <div class="container">
+        <div class="row">
+					<div id="intro">
+						<h1>Let's get ACTIVE</h1>
+						<p>In our fully connected society, where people are more and more driven by self-expression values instead of needs, in which problems are complex and where consumers are looking for transformative interactive experiences, we need a different way of value creation. Foremost; we need a different way of looking at the world, doing business and a new approach to the leisure domain. We need Imagineering, ‘Engineering for imagination’ (Nijs, 2013).</p>
+                        <p>There is a distinction between two entities:</p>
+                        <ol>
+                            <li>Imagineering as a <strong>perspective</strong> which is a way of working, acting and thinking. It’s a way of <em>looking</em> at the world and dealing with subjects and challenges.</li>
+                            <li>Imagineering as a <strong>design method</strong> is a way of <em>doing</em> things.</li>
+                        </ol>
+                        <p>
+                        Although both differ in functionality there is a common frame. With  this frame you can create a culture of innovation and engagement and design meaningful experiences. That’s the goal of Imagineering and that is also the goal of our education, which explains the central role of Imagineering in the competency model.<br/> In order to determine whether something is Imagineering, six criteria need to be present which fit both the overarching Imagineering perspective and the Imagineering design method. ACTIVE represent those criteria: Appreciative, Co-creative, Transformative, Imaginative, Values based, Experience focused.<br/>Answer the questionnaire and find out whether you or your idea is ACTIVE.
+                        </p>
+						<a class="button" id="continue">Start<i class="material-icons">chevron_right</i></a>
+					</div>
+					<div class="form">
+						<form id="getactiveform">
+
+							<input class='stageinput' id="one" type="radio" name="stage" checked="checked" />
+							<input class='stageinput' id="two" type="radio" name="stage" />
+							<input class='stageinput' id="three" type="radio" name="stage" />
+							<input class='stageinput' id="four" type="radio" name="stage" />
+							<input class='stageinput' id="five" type="radio" name="stage" />
+							<input class='stageinput' id="six" type="radio" name="stage" />
+
+							<div class="stages">
+								<label for="one">A</label>
+								<label for="two">C</label>
+								<label for="three">T</label>
+								<label for="four">I</label>
+								<label for="five">V</label>
+								<label for="six">E</label>
+							</div>
+
+							<span class="progress"><span></span></span>
+							<div class="panels">
+								<div data-panel="one">
+									<h4>Appreciative</h4><br/>
+									<p>Did you or does it (the oneliner, the concept, the organisation or the process):</p>
+									<div class='indent'>
+										<p>use positive language?</p>
+										<div class="rate">
+											<input type="radio" id="a10" name="appreciative1" value="33.33" />
+										  <label for="a10"></label>
+											<input type="radio" id="a9" name="appreciative1" value="30" />
+										  <label for="a9"></label>
+											<input type="radio" id="a8" name="appreciative1" value="26.66" />
+										  <label for="a8"></label>
+											<input type="radio" id="a7" name="appreciative1" value="23.33" />
+										  <label for="a7"></label>
+											<input type="radio" id="a6" name="appreciative1" value="20" />
+										  <label for="a6"></label>
+											<input type="radio" id="a5" name="appreciative1" value="16.66" />
+										  <label for="a5"></label>
+										  <input type="radio" id="a4" name="appreciative1" value="13.33" />
+										  <label for="a4"></label>
+										  <input type="radio" id="a3" name="appreciative1" value="10" />
+										  <label for="a3"></label>
+										  <input type="radio" id="a2" name="appreciative1" value="6.66" />
+										  <label for="a2"></label>
+										  <input type="radio" id="a1" name="appreciative1" value="3.33" />
+										  <label for="a1"></label>
+											<input type="radio" name="appreciative1" value="0" class='defaultcheck' checked>
+										</div>
+										<p>build upon the strengths and potential instead of the problems and impossibilities?</p>
+										<div class="rate">
+											<input type="radio" id="a20" name="appreciative2" value="33.33" />
+										  <label for="a20"></label>
+											<input type="radio" id="a19" name="appreciative2" value="30" />
+										  <label for="a19"></label>
+											<input type="radio" id="a18" name="appreciative2" value="26.66" />
+										  <label for="a18"></label>
+											<input type="radio" id="a17" name="appreciative2" value="23.33" />
+										  <label for="a17"></label>
+											<input type="radio" id="a16" name="appreciative2" value="20" />
+										  <label for="a16"></label>
+											<input type="radio" id="a15" name="appreciative2" value="16.66" />
+										  <label for="a15"></label>
+										  <input type="radio" id="a14" name="appreciative2" value="13.33" />
+										  <label for="a14"></label>
+										  <input type="radio" id="a13" name="appreciative2" value="10" />
+										  <label for="a13"></label>
+										  <input type="radio" id="a12" name="appreciative2" value="6.66" />
+										  <label for="a12"></label>
+										  <input type="radio" id="a11" name="appreciative2" value="3.33" />
+										  <label for="a11"></label>
+											<input type="radio" name="appreciative2" value="0" class='defaultcheck' checked>
+										</div>
+										<p>create new inspiring perspectives for the future?</p>
+										<div class="rate">
+											<input type="radio" id="a30" name="appreciative3" value="33.33" />
+										  <label for="a30"></label>
+											<input type="radio" id="a29" name="appreciative3" value="30" />
+										  <label for="a29"></label>
+											<input type="radio" id="a28" name="appreciative3" value="26.66" />
+										  <label for="a28"></label>
+											<input type="radio" id="a27" name="appreciative3" value="23.33" />
+										  <label for="a27"></label>
+											<input type="radio" id="a26" name="appreciative3" value="20" />
+										  <label for="a26"></label>
+											<input type="radio" id="a25" name="appreciative3" value="16.66" />
+										  <label for="a25"></label>
+										  <input type="radio" id="a24" name="appreciative3" value="13.33" />
+										  <label for="a24"></label>
+										  <input type="radio" id="a23" name="appreciative3" value="10" />
+										  <label for="a23"></label>
+										  <input type="radio" id="a22" name="appreciative3" value="6.66" />
+										  <label for="a22"></label>
+										  <input type="radio" id="a21" name="appreciative3" value="3.33" />
+										  <label for="a21"></label>
+								            <input type="radio" name="appreciative3" value="0" class='defaultcheck' checked>
+										</div>
+                                        <br/>
+                                        <a class='button to2'>Next<i class="material-icons">chevron_right</i></a>
+									</div>
+								</div>
+								<div data-panel="two">
+									<h4>Co-creative</h4><br/>
+									<p>Did you or does it (the oneliner, the concept, the organisation or the process):</p>
+									<div class='indent'>
+										<p>build upon the power of the stakeholders?</p>
+										<div class="rate">
+											<input type="radio" id="c10" name="cocreative1" value="33.33" />
+										  <label for="c10"></label>
+											<input type="radio" id="c9" name="cocreative1" value="30" />
+										  <label for="c9"></label>
+											<input type="radio" id="c8" name="cocreative1" value="26.66" />
+										  <label for="c8"></label>
+											<input type="radio" id="c7" name="cocreative1" value="23.33" />
+										  <label for="c7"></label>
+											<input type="radio" id="c6" name="cocreative1" value="20" />
+										  <label for="c6"></label>
+											<input type="radio" id="c5" name="cocreative1" value="16.66" />
+										  <label for="c5"></label>
+										  <input type="radio" id="c4" name="cocreative1" value="13.33" />
+										  <label for="c4"></label>
+										  <input type="radio" id="c3" name="cocreative1" value="10" />
+										  <label for="c3"></label>
+										  <input type="radio" id="c2" name="cocreative1" value="6.66" />
+										  <label for="c2"></label>
+										  <input type="radio" id="c1" name="cocreative1" value="3.33" />
+										  <label for="c1"></label>
+											<input type="radio" name="cocreative1" value="0" class='defaultcheck' checked>
+										</div>
+										<p>keep the dialogue open and alive?</p>
+										<div class="rate">
+											<input type="radio" id="c20" name="cocreative2" value="33.33" />
+										  <label for="c20"></label>
+											<input type="radio" id="c19" name="cocreative2" value="30" />
+										  <label for="c19"></label>
+											<input type="radio" id="c18" name="cocreative2" value="26.66" />
+										  <label for="c18"></label>
+											<input type="radio" id="c17" name="cocreative2" value="23.33" />
+										  <label for="c17"></label>
+											<input type="radio" id="c16" name="cocreative2" value="20" />
+										  <label for="c16"></label>
+											<input type="radio" id="c15" name="cocreative2" value="16.66" />
+										  <label for="c15"></label>
+										  <input type="radio" id="c14" name="cocreative2" value="13.33" />
+										  <label for="c14"></label>
+										  <input type="radio" id="c13" name="cocreative2" value="10" />
+										  <label for="c13"></label>
+										  <input type="radio" id="c12" name="cocreative2" value="6.66" />
+										  <label for="c12"></label>
+										  <input type="radio" id="c11" name="cocreative2" value="3.33" />
+										  <label for="c11"></label>
+											<input type="radio" name="cocreative2" value="0" class='defaultcheck' checked>
+										</div>
+										<p>let the involved stakeholders create/design themselves OR does it invite them to create themselves?</p>
+										<div class="rate">
+											<input type="radio" id="c30" name="cocreative3" value="33.33" />
+										  <label for="c30"></label>
+											<input type="radio" id="c29" name="cocreative3" value="30" />
+										  <label for="c29"></label>
+											<input type="radio" id="c28" name="cocreative3" value="26.66" />
+										  <label for="c28"></label>
+											<input type="radio" id="c27" name="cocreative3" value="23.33" />
+										  <label for="c27"></label>
+											<input type="radio" id="c26" name="cocreative3" value="20" />
+										  <label for="c26"></label>
+											<input type="radio" id="c25" name="cocreative3" value="16.66" />
+										  <label for="c25"></label>
+										  <input type="radio" id="c24" name="cocreative3" value="13.33" />
+										  <label for="c24"></label>
+										  <input type="radio" id="c23" name="cocreative3" value="10" />
+										  <label for="c23"></label>
+										  <input type="radio" id="c22" name="cocreative3" value="6.66" />
+										  <label for="c22"></label>
+										  <input type="radio" id="c21" name="cocreative3" value="3.33" />
+										  <label for="c21"></label>
+											<input type="radio" name="cocreative3" value="0" class='defaultcheck' checked>
+										</div>
+                                        <br/>
+                                        <a class='button back to1'>Previous<i class="material-icons">chevron_left</i></a><a class='button to3'>Next<i class="material-icons">chevron_right</i></a>
+									</div>
+								</div>
+								<div data-panel="three">
+									<h4>Transformative</h4><br/>
+									<p>Did you or does it (the oneliner, the concept, the organisation or the process):</p>
+									<div class='indent'>
+										<p>focus on some kind of desired change?</p>
+										<div class="rate">
+											<input type="radio" id="t10" name="transformative1" value="33.33" />
+										  <label for="t10"></label>
+											<input type="radio" id="t9" name="transformative1" value="30" />
+										  <label for="t9"></label>
+											<input type="radio" id="t8" name="transformative1" value="26.66" />
+										  <label for="t8"></label>
+											<input type="radio" id="t7" name="transformative1" value="23.33" />
+										  <label for="t7"></label>
+											<input type="radio" id="t6" name="transformative1" value="20" />
+										  <label for="t6"></label>
+											<input type="radio" id="t5" name="transformative1" value="16.66" />
+										  <label for="t5"></label>
+										  <input type="radio" id="t4" name="transformative1" value="13.33" />
+										  <label for="t4"></label>
+										  <input type="radio" id="t3" name="transformative1" value="10" />
+										  <label for="t3"></label>
+										  <input type="radio" id="t2" name="transformative1" value="6.66" />
+										  <label for="t2"></label>
+										  <input type="radio" id="t1" name="transformative1" value="3.33" />
+										  <label for="t1"></label>
+											<input type="radio" name="transformative1" value="0" class='defaultcheck' checked>
+										</div>
+										<p>inspire people to think or act differently?</p>
+										<div class="rate">
+											<input type="radio" id="t20" name="transformative2" value="33.33" />
+										  <label for="t20"></label>
+											<input type="radio" id="t19" name="transformative2" value="30" />
+										  <label for="t19"></label>
+											<input type="radio" id="t18" name="transformative2" value="26.66" />
+										  <label for="t18"></label>
+											<input type="radio" id="t17" name="transformative2" value="23.33" />
+										  <label for="t17"></label>
+											<input type="radio" id="t16" name="transformative2" value="20" />
+										  <label for="t16"></label>
+											<input type="radio" id="t15" name="transformative2" value="16.66" />
+										  <label for="t15"></label>
+										  <input type="radio" id="t14" name="transformative2" value="13.33" />
+										  <label for="t14"></label>
+										  <input type="radio" id="t13" name="transformative2" value="10" />
+										  <label for="t13"></label>
+										  <input type="radio" id="t12" name="transformative2" value="6.66" />
+										  <label for="t12"></label>
+										  <input type="radio" id="t11" name="transformative2" value="3.33" />
+										  <label for="t11"></label>
+											<input type="radio" name="transformative2" value="0" class='defaultcheck' checked>
+										</div>
+										<p>lead to a desired, sustainable and valuable change?</p>
+										<div class="rate">
+											<input type="radio" id="t30" name="transformative3" value="33.33" />
+										  <label for="t30"></label>
+											<input type="radio" id="t29" name="transformative3" value="30" />
+										  <label for="t29"></label>
+											<input type="radio" id="t28" name="transformative3" value="26.66" />
+										  <label for="t28"></label>
+											<input type="radio" id="t27" name="transformative3" value="23.33" />
+										  <label for="t27"></label>
+											<input type="radio" id="t26" name="transformative3" value="20" />
+										  <label for="t26"></label>
+											<input type="radio" id="t25" name="transformative3" value="16.66" />
+										  <label for="t25"></label>
+										  <input type="radio" id="t24" name="transformative3" value="13.33" />
+										  <label for="t24"></label>
+										  <input type="radio" id="t23" name="transformative3" value="10" />
+										  <label for="t23"></label>
+										  <input type="radio" id="t22" name="transformative3" value="6.66" />
+										  <label for="t22"></label>
+										  <input type="radio" id="t21" name="transformative3" value="3.33" />
+										  <label for="t21"></label>
+											<input type="radio" name="transformative3" value="0" class='defaultcheck' checked>
+										</div>
+                                        <br/>
+                                        <a class='button back to2'>Previous<i class="material-icons">chevron_left</i></a><a class='button to4'>Next<i class="material-icons">chevron_right</i></a>
+									</div>
+								</div>
+								<div data-panel="four">
+									<h4>Imaginative</h4><br/>
+									<p>Did you or does it (the oneliner, the concept, the organisation or the process):</p>
+									<div class='indent'>
+										<p>appeal to the imagination of stakeholders?</p>
+										<div class="rate">
+											<input type="radio" id="i10" name="imaginative1" value="33.33" />
+										  <label for="i10"></label>
+											<input type="radio" id="i9" name="imaginative1" value="30" />
+										  <label for="i9"></label>
+											<input type="radio" id="i8" name="imaginative1" value="26.66" />
+										  <label for="i8"></label>
+											<input type="radio" id="i7" name="imaginative1" value="23.33" />
+										  <label for="i7"></label>
+											<input type="radio" id="i6" name="imaginative1" value="20" />
+										  <label for="i6"></label>
+											<input type="radio" id="i5" name="imaginative1" value="16.66" />
+										  <label for="i5"></label>
+										  <input type="radio" id="i4" name="imaginative1" value="13.33" />
+										  <label for="i4"></label>
+										  <input type="radio" id="i3" name="imaginative1" value="10" />
+										  <label for="i3"></label>
+										  <input type="radio" id="i2" name="imaginative1" value="6.66" />
+										  <label for="i2"></label>
+										  <input type="radio" id="i1" name="imaginative1" value="3.33" />
+										  <label for="i1"></label>
+											<input type="radio" name="imaginative1" value="0" class='defaultcheck' checked>
+										</div>
+										<p>consciously use creativity?</p>
+										<div class="rate">
+											<input type="radio" id="i20" name="imaginative2" value="33.33" />
+										  <label for="i20"></label>
+											<input type="radio" id="i19" name="imaginative2" value="30" />
+										  <label for="i19"></label>
+											<input type="radio" id="i18" name="imaginative2" value="26.66" />
+										  <label for="i18"></label>
+											<input type="radio" id="i17" name="imaginative2" value="23.33" />
+										  <label for="i17"></label>
+											<input type="radio" id="i16" name="imaginative2" value="20" />
+										  <label for="i16"></label>
+											<input type="radio" id="i15" name="imaginative2" value="16.66" />
+										  <label for="i15"></label>
+										  <input type="radio" id="i14" name="imaginative2" value="13.33" />
+										  <label for="i14"></label>
+										  <input type="radio" id="i13" name="imaginative2" value="10" />
+										  <label for="i13"></label>
+										  <input type="radio" id="i12" name="imaginative2" value="6.66" />
+										  <label for="i12"></label>
+										  <input type="radio" id="i11" name="imaginative2" value="3.33" />
+										  <label for="i11"></label>
+											<input type="radio" name="imaginative2" value="0" class='defaultcheck' checked>
+										</div>
+										<p>create a new idea or combination that doesn't exist yet?</p>
+										<div class="rate">
+											<input type="radio" id="i30" name="imaginative3" value="33.33" />
+										  <label for="i30"></label>
+											<input type="radio" id="i29" name="imaginative3" value="30" />
+										  <label for="i29"></label>
+											<input type="radio" id="i28" name="imaginative3" value="26.66" />
+										  <label for="i28"></label>
+											<input type="radio" id="i27" name="imaginative3" value="23.33" />
+										  <label for="i27"></label>
+											<input type="radio" id="i26" name="imaginative3" value="20" />
+										  <label for="i26"></label>
+											<input type="radio" id="i25" name="imaginative3" value="16.66" />
+										  <label for="i25"></label>
+										  <input type="radio" id="i24" name="imaginative3" value="13.33" />
+										  <label for="i24"></label>
+										  <input type="radio" id="i23" name="imaginative3" value="10" />
+										  <label for="i23"></label>
+										  <input type="radio" id="i22" name="imaginative3" value="6.66" />
+										  <label for="i22"></label>
+										  <input type="radio" id="i21" name="imaginative3" value="3.33" />
+										  <label for="i21"></label>
+											<input type="radio" name="imaginative3" value="0" class='defaultcheck' checked>
+										</div>
+                                        <br/>
+                                        <a class='button back to3'>Previous<i class="material-icons">chevron_left</i></a><a class='button to5'>Next<i class="material-icons">chevron_right</i></a>
+									</div>
+								</div>
+								<div data-panel="five">
+									<h4>Values-based</h4><br/>
+									<p>Did you or does it (the oneliner, the concept, the organisation or the process):</p>
+									<div class='indent'>
+										<p>work from (shared) values?</p>
+										<div class="rate">
+											<input type="radio" id="v10" name="valuebased1" value="33.33" />
+										  <label for="v10"></label>
+											<input type="radio" id="v9" name="valuebased1" value="30" />
+										  <label for="v9"></label>
+											<input type="radio" id="v8" name="valuebased1" value="26.66" />
+										  <label for="v8"></label>
+											<input type="radio" id="v7" name="valuebased1" value="23.33" />
+										  <label for="v7"></label>
+											<input type="radio" id="v6" name="valuebased1" value="20" />
+										  <label for="v6"></label>
+											<input type="radio" id="v5" name="valuebased1" value="16.66" />
+										  <label for="v5"></label>
+										  <input type="radio" id="v4" name="valuebased1" value="13.33" />
+										  <label for="v4"></label>
+										  <input type="radio" id="v3" name="valuebased1" value="10" />
+										  <label for="v3"></label>
+										  <input type="radio" id="v2" name="valuebased1" value="6.66" />
+										  <label for="v2"></label>
+										  <input type="radio" id="v1" name="valuebased1" value="3.33" />
+										  <label for="v1"></label>
+											<input type="radio" name="valuebased1" value="0" class='defaultcheck' checked>
+										</div>
+										<p>reflect or make visible which (shared) values are used?</p>
+										<div class="rate">
+											<input type="radio" id="v20" name="valuebased2" value="33.33" />
+										  <label for="v20"></label>
+											<input type="radio" id="v19" name="valuebased2" value="30" />
+										  <label for="v19"></label>
+											<input type="radio" id="v18" name="valuebased2" value="26.66" />
+										  <label for="v18"></label>
+											<input type="radio" id="v17" name="valuebased2" value="23.33" />
+										  <label for="v17"></label>
+											<input type="radio" id="v16" name="valuebased2" value="20" />
+										  <label for="v16"></label>
+											<input type="radio" id="v15" name="valuebased2" value="16.66" />
+										  <label for="v15"></label>
+										  <input type="radio" id="v14" name="valuebased2" value="13.33" />
+										  <label for="v14"></label>
+										  <input type="radio" id="v13" name="valuebased2" value="10" />
+										  <label for="v13"></label>
+										  <input type="radio" id="v12" name="valuebased2" value="6.66" />
+										  <label for="v12"></label>
+										  <input type="radio" id="v11" name="valuebased2" value="3.33" />
+										  <label for="v11"></label>
+											<input type="radio" name="valuebased2" value="0" class='defaultcheck' checked>
+										</div>
+										<p>add meaning for stakeholders?</p>
+										<div class="rate">
+											<input type="radio" id="v30" name="valuebased3" value="33.33" />
+										  <label for="v30"></label>
+											<input type="radio" id="v29" name="valuebased3" value="30" />
+										  <label for="v29"></label>
+											<input type="radio" id="v28" name="valuebased3" value="26.66" />
+										  <label for="v28"></label>
+											<input type="radio" id="v27" name="valuebased3" value="23.33" />
+										  <label for="v27"></label>
+											<input type="radio" id="v26" name="valuebased3" value="20" />
+										  <label for="v26"></label>
+											<input type="radio" id="v25" name="valuebased3" value="16.66" />
+										  <label for="v25"></label>
+										  <input type="radio" id="v24" name="valuebased3" value="13.33" />
+										  <label for="v24"></label>
+										  <input type="radio" id="v23" name="valuebased3" value="10" />
+										  <label for="v23"></label>
+										  <input type="radio" id="v22" name="valuebased3" value="6.66" />
+										  <label for="v22"></label>
+										  <input type="radio" id="v21" name="valuebased3" value="3.33" />
+										  <label for="v21"></label>
+											<input type="radio" name="valuebased3" value="0" class='defaultcheck' checked>
+										</div>
+                                        <br/>
+                                        <a class='button back to4'>Previous<i class="material-icons">chevron_left</i></a><a class='button to6'>Next<i class="material-icons">chevron_right</i></a>
+									</div>
+								</div>
+								<div data-panel="six">
+									<h4>Experience focused</h4><br/>
+									<p>Did you or does it (the oneliner, the concept, the organisation or the process):</p>
+									<div class='indent'>
+										<p>inspire participation?</p>
+										<div class="rate">
+											<input type="radio" id="e10" name="experiencefocused1" value="33.33" />
+										  <label for="e10"></label>
+											<input type="radio" id="e9" name="experiencefocused1" value="30" />
+										  <label for="e9"></label>
+											<input type="radio" id="e8" name="experiencefocused1" value="26.66" />
+										  <label for="e8"></label>
+											<input type="radio" id="e7" name="experiencefocused1" value="23.33" />
+										  <label for="e7"></label>
+											<input type="radio" id="e6" name="experiencefocused1" value="20" />
+										  <label for="e6"></label>
+											<input type="radio" id="e5" name="experiencefocused1" value="16.66" />
+										  <label for="e5"></label>
+										  <input type="radio" id="e4" name="experiencefocused1" value="13.33" />
+										  <label for="e4"></label>
+										  <input type="radio" id="e3" name="experiencefocused1" value="10" />
+										  <label for="e3"></label>
+										  <input type="radio" id="e2" name="experiencefocused1" value="6.66" />
+										  <label for="e2"></label>
+										  <input type="radio" id="e1" name="experiencefocused1" value="3.33" />
+										  <label for="e1"></label>
+											<input type="radio" name="experiencefocused1" value="0" class='defaultcheck' checked>
+										</div>
+										<p>evoke positive emotions?</p>
+										<div class="rate">
+											<input type="radio" id="e20" name="experiencefocused2" value="33.33" />
+										  <label for="e20"></label>
+											<input type="radio" id="e19" name="experiencefocused2" value="30" />
+										  <label for="e19"></label>
+											<input type="radio" id="e18" name="experiencefocused2" value="26.66" />
+										  <label for="e18"></label>
+											<input type="radio" id="e17" name="experiencefocused2" value="23.33" />
+										  <label for="e17"></label>
+											<input type="radio" id="e16" name="experiencefocused2" value="20" />
+										  <label for="e16"></label>
+											<input type="radio" id="e15" name="experiencefocused2" value="16.66" />
+										  <label for="e15"></label>
+										  <input type="radio" id="e14" name="experiencefocused2" value="13.33" />
+										  <label for="e14"></label>
+										  <input type="radio" id="e13" name="experiencefocused2" value="10" />
+										  <label for="e13"></label>
+										  <input type="radio" id="e12" name="experiencefocused2" value="6.66" />
+										  <label for="e12"></label>
+										  <input type="radio" id="e11" name="experiencefocused2" value="3.33" />
+										  <label for="e11"></label>
+											<input type="radio" name="experiencefocused2" value="0" class='defaultcheck' checked>
+										</div>
+										<p>create a long lasting impression?</p>
+										<div class="rate">
+											<input type="radio" id="e30" name="experiencefocused3" value="33.33" />
+										  <label for="e30"></label>
+											<input type="radio" id="e29" name="experiencefocused3" value="30" />
+										  <label for="e29"></label>
+											<input type="radio" id="e28" name="experiencefocused3" value="26.66" />
+										  <label for="e28"></label>
+											<input type="radio" id="e27" name="experiencefocused3" value="23.33" />
+										  <label for="e27"></label>
+											<input type="radio" id="e26" name="experiencefocused3" value="20" />
+										  <label for="e26"></label>
+											<input type="radio" id="e25" name="experiencefocused3" value="16.66" />
+										  <label for="e25"></label>
+										  <input type="radio" id="e24" name="experiencefocused3" value="13.33" />
+										  <label for="e24"></label>
+										  <input type="radio" id="e23" name="experiencefocused3" value="10" />
+										  <label for="e23"></label>
+										  <input type="radio" id="e22" name="experiencefocused3" value="6.66" />
+										  <label for="e22"></label>
+										  <input type="radio" id="e21" name="experiencefocused3" value="3.33" />
+										  <label for="e21"></label>
+											<input type="radio" name="experiencefocused3" value="0" class='defaultcheck' checked>
+										</div>
+                                        <br/>
+                                        <a class='button back to5'>Previous<i class="material-icons">chevron_left</i></a><a class='button to7'>Finish<i class="material-icons">chevron_right</i></a>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div id="result">
+							<h1>Congratulations, here is your Imagineering energy field!</h1>
+							<p>The outer lines represent the Imagineering energy field and how the perfectly shaped field should look like. But of course, energy is very dynamic and is constantly moving and changing, just like our society. The inner lines represent the score of your product or process. It gives a visual representation of the current situation, and it can also be used as a starting point for the most desired situation. The figure shows where the focus is and where there is room for dialogue to improve or add elements.  You can use it as a tool to start a discussion and to assess the Imagineering character of something. If there are elements with a low score you can consider to improve or change them. Please note, that it's also possible that you decide not to change anything at all, as long as this is a very conscious choice. ACTIVE does not have the intention to provide you with the ultimate truth on your product or process, it only wants to offer you a tool to help you create more meaningful experiences and a culture of innovation and engagement.<br/></p>
+							<p class="downloadInfo">You can download the visual by right clicking on it and choose: Save as.</p><br/>
+							<canvas id="canvas"></canvas>
+							<a class="button" id="print">Print<i class="material-icons print" style="padding-right: 3px;">print</i></a>
+							<sub style='float:right'>van Dam & Ouwens, 2015</sub>
+						</div>
+					</div>
+        </div>
+        <!-- /.row -->
+    </div>
+	<footer>
+		<p>Model by van Dam & Ouwens, 2015</p>
+		<a href="https://www.maxmade.nl" class="maxmade">Brought to you by <br/><img src="img/logo-MAXmade-CCC.svg" alt="MAXmade" style="height:20px;vertical-align:baseline;padding-top:10px"></a><br/>
+	</footer>
+    <!-- /.container -->
+    <script src="js/jquery.min.js"></script>
+	<script src='js/chart.min.js'></script>
+	<script src='js/getactive.js'></script>
+</body>
+</html>

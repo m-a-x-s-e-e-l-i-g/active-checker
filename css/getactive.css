@@ -1,0 +1,324 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v31/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+body {
+    color: #333d45;
+    font-family:freight-text-pro,Arial,sans-serif;
+    font-weight: 500;
+    margin:0;padding:0;
+}
+.form,#result{display: none;}
+
+.blue{
+    color: rgb(10,129,234);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #333d45;
+    font-family: freight-sans-pro, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+ol li{margin:10px 0;}
+button,
+html,
+input,
+select,
+textarea {
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif
+}
+a {
+    text-decoration: none;
+}
+
+h2,
+h4 {
+    margin-top: 0;
+    font-size: 1.4em
+}
+#intro,
+.form {
+    border: 1px solid rgb(10,129,234);
+    margin: 5% auto;
+    width: 600px;
+    padding: 1em 3em;
+    border-radius: 7px;
+    -webkit-border-radius: 7px
+}
+
+.indent {
+    padding: 20px
+}
+p{
+    line-height:1.5em;
+    font-size:16px;
+}
+.panels p {
+    margin: 0;
+}
+
+input {
+    box-sizing: border-box;
+    display: block;
+    padding: .4em;
+    width: 100%
+}
+.material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+}
+.button {
+    position: relative;
+    display: inline-block;
+    margin:10px 0;
+    padding: 8px 35px 9px 30px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(10, 129, 234);
+    border:0;
+    font-family: freight-sans-pro, Arial, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 22px;
+    transition: all 0.3s;
+}
+.button i{
+    position: absolute;
+    top: 9px;
+    right: 8px;
+}
+.button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(51, 61, 69);
+}
+.button .print{font-size:18px;line-height:22px;}
+.back{
+    background:white;
+    color:rgb(10, 129, 234);
+    border: 1px solid rgb(10, 129, 234);
+    margin-right:15px;
+}
+.back i{
+    left:8px;
+}
+.rate {
+    display: inline-block;
+    padding: 0 10px
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc
+}
+
+.rate:not(:checked)>label:before {
+    content: '● '
+}
+
+.rate>input:checked~label {
+    color: rgb(10, 129, 234);
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: rgb(10, 129, 234);
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: rgb(10, 129, 234);
+}
+
+.stages {
+    font-size: 0;
+    text-align: justify;
+    color: #222
+}
+
+.stages:after {
+    content: '';
+    display: inline-block;
+    font-size: 0;
+    text-align: justify;
+    width: 100%
+}
+
+.stageinput {
+    display: none
+}
+
+.stages label {
+    background: #ffffff;
+    font-family: freight-sans-pro, sans-serif;
+    border: solid 5px #c0c0c0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    text-align: center;
+    width: 50px;
+    z-index: 1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.stages label:after {
+    content: '_';
+    border: solid 5px #499ce5;
+    border-radius: 50%;
+    width: 50px;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    color: #222;
+    display: inline-block;
+    font-size: 0px
+}
+
+#five:checked~.stages label[for=five],
+#four:checked~.stages label[for=four],
+#one:checked~.stages label[for=one],
+#six:checked~.stages label[for=six],
+#three:checked~.stages label[for=three],
+#two:checked~.stages label[for=two] {
+    border-color: rgb(10, 129, 234);
+}
+
+#five:checked~.stages label[for=four]~label,
+#four:checked~.stages label[for=three]~label,
+#one:checked~.stages label,
+#six:checked~.stages label[for=five]~label,
+#three:checked~.stages label[for=two]~label,
+#two:checked~.stages label[for=one]~label {
+    font-size: 16px;
+    font-size: 1rem
+}
+
+#five:checked~.stages label[for=four]~label:after,
+#four:checked~.stages label[for=three]~label:after,
+#one:checked~.stages label:after,
+#six:checked~.stages label[for=five]~label:after,
+#three:checked~.stages label[for=two]~label:after,
+#two:checked~.stages label[for=one]~label:after {
+    display: none
+}
+
+.progress>span {
+    background: #499ce5;
+    display: inline-block;
+    font-size:.87em;
+    height: 5px;
+    -webkit-transform: translateY(-3em);
+    transform: translateY(-3em);
+    transition: 0.3s;
+    width: 0
+}
+
+#two:checked~.progress span {
+    width: 20%
+}
+
+#three:checked~.progress span {
+    width: 40%
+}
+
+#four:checked~.progress span {
+    width: 60%
+}
+
+#five:checked~.progress span {
+    width: 80%
+}
+
+#six:checked~.progress span {
+    width: 100%
+}
+
+.panels>div {
+    display: none
+}
+
+#five:checked~.panels [data-panel=five],
+#four:checked~.panels [data-panel=four],
+#one:checked~.panels [data-panel=one],
+#six:checked~.panels [data-panel=six],
+#three:checked~.panels [data-panel=three],
+#two:checked~.panels [data-panel=two] {
+    display: block
+}
+
+footer{
+    text-align:center;
+    margin:20px 0;
+}
+footer p, footer a{
+    font-family: roboto;
+    font-size: 12px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+@media print {
+  #print {
+    display: none;
+  }
+  .downloadInfo {
+    display: none;
+  }
+  .github-corner {
+    display: none;
+  }
+}
