@@ -10,6 +10,13 @@ Although both differ in functionality there is a common frame. With this frame y
 In order to determine whether something is Imagineering, six criteria need to be present which fit both the overarching Imagineering perspective and the Imagineering design method. ACTIVE represent those criteria: Appreciative, Co-creative, Transformative, Imaginative, Values based, Experience focused.
 Answer the questionnaire and find out whether you or your idea is ACTIVE.
 
+## How?
+Just answer 6 x 3 questions by rating from 1 to 10.
+![image](https://github.com/m-a-x-s-e-e-l-i-g/active-checker/assets/7907436/e9c35295-2ed7-47c3-93ea-de0cf79dfe1f)  
+You'll see the results in a nice radio chart.
+![image](https://github.com/m-a-x-s-e-e-l-i-g/active-checker/assets/7907436/a77919fb-848d-4661-bd42-d2c339b9eb71)
+
+
 ## License and Credits
 This project is licensed under the [GPL-3.0](LICENSE) license.  
 Model by van Dam & Ouwens (2015).  
