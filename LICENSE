@@ -672,3 +672,9 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
+
+
+Additional Terms:
+
+1. You are required to provide proper attribution to the original authors, including "MAXmade - (Max Seelig)" and "van Dam & Ouwens (2015)", in all derivative works and redistributions of this software.
+2. Any modifications you make to this software must be clearly documented and attributed.
