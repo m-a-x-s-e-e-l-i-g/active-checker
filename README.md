@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a25c48d3-1a22-4d6b-ac54-fd86602b9bd0/deploy-status)](https://app.netlify.com/sites/active-checker/deploys)
 # ACTIVE checker
 This tool helps you find out if you or your idea aligns with Imagineering principles. A short questionaire as a path to innovation and meaningful engagement. A model by van Dam & Ouwens (2015).
 
@@ -10,4 +11,6 @@ In order to determine whether something is Imagineering, six criteria need to be
 Answer the questionnaire and find out whether you or your idea is ACTIVE.
 
 ## License and Credits
-This project is licensed under the [GPL-3.0](LICENSE) license.
+This project is licensed under the [GPL-3.0](LICENSE) license.  
+Model by van Dam & Ouwens (2015).  
+Brought to you by [MAXmade](https://maxmade.nl)
