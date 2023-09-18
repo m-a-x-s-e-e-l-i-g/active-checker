@@ -8,3 +8,6 @@ Imagineering as a design method is a way of doing things.
 Although both differ in functionality there is a common frame. With this frame you can create a culture of innovation and engagement and design meaningful experiences. That’s the goal of Imagineering and that is also the goal of our education, which explains the central role of Imagineering in the competency model.
 In order to determine whether something is Imagineering, six criteria need to be present which fit both the overarching Imagineering perspective and the Imagineering design method. ACTIVE represent those criteria: Appreciative, Co-creative, Transformative, Imaginative, Values based, Experience focused.
 Answer the questionnaire and find out whether you or your idea is ACTIVE.
+
+## License and Credits
+This project is licensed under the [GPL-3.0](LICENSE) license.
